@@ -1,26 +1,43 @@
 let header = document.querySelector("h5");
+console.log(1)
 let nextBtn = document.getElementById("nextBtn");
-let prevBtn = document.getElementById("prevBtn").style.display = "none";
+let prevBtn = document.getElementById("prevBtn")
+    prevBtn.style.display = "none";
 let paragraph = document.querySelector("p");
 let resetBtn = document.getElementById("resetBtn");
 
-let viewState = 0;
+let i = 0;
+console.log(2);
+
+let stateArray = [];
+let viewState = stateArray[0];
+console.log(4);
 
 nextBtn.addEventListener("click", next);
 prevBtn.addEventListener("click", previous);
 resetBtn.addEventListener("click", reset);
+console.log(3);
 
 function next() {
-    console.log("Yup yup")
+    i++;
+    viewState = stateArray[i];
+    console.log("view state incremented once")
 };
-function previous() {
-    console.log("Yeah yeah")
-};
-function reset() {
-    console.log("Yip yip")
-};
+console.log(5);
 
-let stateArray = [
+function previous() {
+    i--;
+    viewState = stateArray[i];
+    console.log("view state decremented once")
+};
+console.log(6);
+function reset() {
+    viewState = stateArray[0];
+    console.log("set to first page")
+};
+console.log(7);
+
+stateArray = [
     {   state: 0,  
         image: null,
         header: "Your thoughts are so obvious.",
@@ -28,7 +45,7 @@ let stateArray = [
         prev: null,
         next: next(),
         reset: reset(),
-    }
+    },
      {  state: 1,  
         image: null,
         header: "I know it's hard for you, but think.",
@@ -36,7 +53,7 @@ let stateArray = [
         prev: null,
         next: next(),
         reset: reset(),
-    }
+    },
     {   state: 2,  
         image: null,
         header: "Knowing you, you'll need a calculator for this.",
@@ -44,7 +61,7 @@ let stateArray = [
         prev: null,
         next: next(),
         reset: reset(),
-    }
+    },
     {   state: 3,  
         image: null,
         header: "This next part should be easy. Then again... it's you...",
@@ -52,7 +69,7 @@ let stateArray = [
         prev: null,
         next: next(),
         reset: reset(),
-    }
+    },
     {   state: 4,  
         image: null,
         header: "Try not to use your fingers and toes...",
@@ -60,7 +77,7 @@ let stateArray = [
         prev: null,
         next: next(),
         reset: reset(),
-    }
+    },
     {   state: 5,  
         image: null,
         header: "Make sure you know how to subtract. Geesh...",
@@ -68,7 +85,7 @@ let stateArray = [
         prev: null,
         next: next(),
         reset: reset(),
-    }
+    },
     {   state: 6,  
         image: null,
         header: "Here comes the icing on the cake...",
@@ -76,7 +93,7 @@ let stateArray = [
         prev: null,
         next: next(),
         reset: reset(),
-    }
+    },
     {   state: 7,  
         image: null,
         header: "You made it too easy...",
@@ -86,6 +103,6 @@ let stateArray = [
         reset: reset(),
     }
 ];
+console.log(8);
 
-//Update object's name property.
-myArray[objIndex].name = "Laila"
+//I feel like somehow I can use the spread operator to update the object values. 
