@@ -2,17 +2,37 @@
     height: 100%;
 } */
 main {
-    height: 100%;
+    height: 100vh;
 }
 
 h5 {
-    
+    color: rgba(85, 85, 85, 0.786);
+    font-size: 3.5rem;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 2rem;
+    line-height: 1.5;
+}
+.col-8 {
+    margin: 0;
+    width: 100%;
+    text-align: center;
 }
 
-section {
+/* section {
 
+} */
+#section4 {
+    margin-bottom: 4rem;
+}
+#btnArea {
+    margin-bottom: 4rem;
+    width: 20rem;
 }
 
-button {
-
+#nextBtn {
+    width: 80%;
 }
+
+/* button {
+
+} */
