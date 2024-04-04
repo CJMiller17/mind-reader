@@ -1,8 +1,6 @@
 let header = document.querySelector("h5");
 console.log(1)
 let nextBtn = document.getElementById("nextBtn");
-let prevBtn = document.getElementById("prevBtn")
-    prevBtn.style.display = "none";
 let paragraph = document.querySelector("p");
 let resetBtn = document.getElementById("resetBtn");
 
@@ -14,39 +12,34 @@ let stateArray = [
         image: null,
         header: "I can read your mind",
         p: "",
-        prev: null,
-        next: "go",
-        reset: null,
+        next: "",
+        reset: "GO",
     },
     {  state: 1,  
         image: null,
         header: "Pick a number from 01-99",
         p: "when you have your number click next",
-        prev: null,
         next: "next",
-        reset: "symbol",
+        reset: resetBtn.style.display,
     },
     {   state: 2,  
         image: null,
         header: "Add both digits together to get a new number",
         p: "Ex: 14 is 1 + 4 = 5 click next to proceed",
-        prev: null,
         next: "next",
-        reset: "symbol",
+        reset: "",
     },
     {   state: 3,  
         image: null,
         header: "Subtract your new number from the original number",
         p: "Ex: 14 - 5 = 9",
-        prev: null,
         next: "next",
-        reset: "symbol",
+        reset: "",
     },
     {   state: 4,  
         image: null,
         header: "Series of symbols ... ",
         p: "Find your new number. Note the symbol beside the number",
-        prev: null,
         next: "reveal",
         reset: "symbol",
     },
@@ -54,7 +47,6 @@ let stateArray = [
         image: null,
         header: "Symbol",
         p: "Your symbol is &",
-        prev: null,
         next: "",
         reset: "symbol",
     },
@@ -64,15 +56,11 @@ console.log("We made it through the array thingy!!")
 function updateView() {
     header.textContent = stateArray[i].header;
     nextBtn.textContent = stateArray[i].next;
-    prevBtn.textContent = stateArray[i].prev;
     paragraph.textContent = stateArray[i].p;
     resetBtn.textContent = stateArray[i].reset;
-
     console.log("The state array stuff looks good")
-    
     nextBtn.addEventListener("click", /*stateArray[i].*/next);
     console.log("The next button stuff looks good");
-    prevBtn.addEventListener("click", /*stateArray[i].*/previous);
     console.log("The previous button stuff looks good");
     resetBtn.addEventListener("click", /*stateArray[i].*/reset);
     console.log("The reset button stuff looks good");
@@ -103,10 +91,9 @@ function reset() {
 };
 console.log(7);
 
-nextBtn.addEventListener("click", /*stateArray[i].*/ next);
+nextBtn.addEventListener("click", next);
 console.log("The ext button stuff looks good");
-prevBtn.addEventListener("click", /*stateArray[i].*/ previous);
 console.log("The previous button stuff looks good");
-resetBtn.addEventListener("click", /*stateArray[i].*/ reset);
+resetBtn.addEventListener("click", reset);
 console.log("The reset button stuff looks good");
-//I feel like somehow I can use the spread operator to update the object values. 
+ 

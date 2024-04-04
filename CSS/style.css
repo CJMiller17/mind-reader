@@ -1,10 +1,6 @@
-/* html, body {
-    height: 100%;
-} */
 main {
     height: 100vh;
 }
-
 h5 {
     color: rgba(85, 85, 85, 0.786);
     font-size: 3.5rem;
@@ -17,10 +13,6 @@ h5 {
     width: 100%;
     text-align: center;
 }
-
-/* section {
-
-} */
 #section4 {
     margin-bottom: 4rem;
 }
@@ -28,11 +20,13 @@ h5 {
     margin-bottom: 4rem;
     width: 20rem;
 }
-
 #nextBtn {
-    width: 80%;
+    width: 20rem;
+    height: 4.5rem;
 }
-
-/* button {
-
-} */
+#resetBtn {
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    margin-left: 16rem;
+}
