@@ -21,61 +21,71 @@ function reset() {
 };
 
 let stateArray = [
-    State 0: {
+    {   state: 0,  
         image: null,
         header: "Your thoughts are so obvious.",
         p: "I bet I can read you mind, you simpleton.",
-        prev: 
-        next: null;
-        reset: 
+        prev: null,
+        next: next(),
+        reset: reset(),
     }
-    State 3: {
-        image: IMG / srfnxbjdnb.png
-        header:
-        p:
-        prev:
-        next: null;
-        reset: 
+     {  state: 1,  
+        image: null,
+        header: "I know it's hard for you, but think.",
+        p: "Think of a whole number between 1-100.",
+        prev: null,
+        next: next(),
+        reset: reset(),
     }
-    State 4: {
-        image: IMG / srfnxbjdnb.png
-        header:
-        p:
-        prev:
-        next: null;
-        reset: 
+    {   state: 2,  
+        image: null,
+        header: "Knowing you, you'll need a calculator for this.",
+        p: "Double the number you chose.",
+        prev: null,
+        next: next(),
+        reset: reset(),
     }
-    State 5: {
-        image: IMG / srfnxbjdnb.png
-        header:
-        p:
-        prev:
+    {   state: 3,  
+        image: null,
+        header: "This next part should be easy. Then again... it's you...",
+        p: "Add 'insert random EVEN number' to your number.",
+        prev: null,
+        next: next(),
+        reset: reset(),
+    }
+    {   state: 4,  
+        image: null,
+        header: "Try not to use your fingers and toes...",
+        p: "Divide your number by 2.",
+        prev: null,
+        next: next(),
+        reset: reset(),
+    }
+    {   state: 5,  
+        image: null,
+        header: "Make sure you know how to subtract. Geesh...",
+        p: "Subtract your original number from you new number.",
+        prev: null,
+        next: next(),
+        reset: reset(),
+    }
+    {   state: 6,  
+        image: null,
+        header: "Here comes the icing on the cake...",
+        p: "Now add 'random number here'.",
+        prev: null,
+        next: next(),
+        reset: reset(),
+    }
+    {   state: 7,  
+        image: null,
+        header: "You made it too easy...",
+        p: "Is this your number? 'display answer' ",
+        prev: null,
         next: null,
-        reset: 
-    }
-    State 6: {
-        image: IMG / srfnxbjdnb.png
-        header:
-        p:
-        prev:
-        next: null;
-        reset: 
-    }
-    State 7: {
-        image: IMG / srfnxbjdnb.png
-        header:
-        p:
-        prev:
-        next: null;
-        reset: 
+        reset: reset(),
     }
 ];
-let myArray = [
-  {id: 0, name: "Jhon"},
-  {id: 1, name: "Sara"},
-  {id: 2, name: "Domnic"},
-  {id: 3, name: "Bravo"}
-],
 
 //Update object's name property.
 myArray[objIndex].name = "Laila"
