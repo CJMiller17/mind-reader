@@ -15,8 +15,8 @@ let stateArray = [
         header: "Your thoughts are so obvious.",
         p: "I bet I can read you mind, you simpleton.",
         prev: null,
-        next: null,
-        reset: "go",
+        next: "go",
+        reset: null,
     },
     {  state: 1,  
         image: null,
@@ -76,16 +76,22 @@ let stateArray = [
     }
 ];
 console.log("We made it through the array thingy!!")
+
 function updateView() {
     header.textContent = stateArray[i].header;
     nextBtn.textContent = stateArray[i].next;
     prevBtn.textContent = stateArray[i].prev;
     paragraph.textContent = stateArray[i].p;
     resetBtn.textContent = stateArray[i].reset;
+
+    console.log("The state array stuff looks good")
     
-    nextBtn.addEventListener("click", stateArray[i].next);
-    prevBtn.addEventListener("click", stateArray[i].prev);
-    resetBtn.addEventListener("click", stateArray[i].reset);
+    nextBtn.addEventListener("click", /*stateArray[i].*/next);
+    console.log("The next button stuff looks good");
+    prevBtn.addEventListener("click", /*stateArray[i].*/previous);
+    console.log("The previous button stuff looks good");
+    resetBtn.addEventListener("click", /*stateArray[i].*/reset);
+    console.log("The reset button stuff looks good");
 }
 console.log("Function looks good!");
 updateView();
@@ -94,25 +100,29 @@ console.log("Updated!");
 
 function next() {
     i++;
-    // stateArray[i];
+    updateView(i);
     console.log("view state incremented once")
 };
 console.log(5);
 
 function previous() {
     i--;
-    // stateArray[i];
+    updateView(i);
     console.log("view state decremented once")
 };
 console.log(6);
+
 function reset() {
     i = 0;
-    // stateArray[i];
+    updateView(i);
     console.log("set to first page")
 };
 console.log(7);
 
-nextBtn.addEventListener("click", stateArray[i].next);
-prevBtn.addEventListener("click", stateArray[i].prev);
-resetBtn.addEventListener("click", stateArray[i].reset);
+nextBtn.addEventListener("click", /*stateArray[i].*/ next);
+console.log("The ext button stuff looks good");
+prevBtn.addEventListener("click", /*stateArray[i].*/ previous);
+console.log("The previous button stuff looks good");
+resetBtn.addEventListener("click", /*stateArray[i].*/ reset);
+console.log("The reset button stuff looks good");
 //I feel like somehow I can use the spread operator to update the object values. 
