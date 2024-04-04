@@ -1,31 +1,36 @@
-let header = document.querySelector("h5")
-let nextBtn = document.querySelector("button")
-let paragraph = document.querySelector("p")
-let resetBtn = document.getElementById("resetBtn")
-Grab the p
-Grab the previous button
-Grab the next button
-Grab the reset
+let header = document.querySelector("h5");
+let nextBtn = document.getElementById("nextBtn");
+let prevBtn = document.getElementById("prevBtn").style.display = "none";
+let paragraph = document.querySelector("p");
+let resetBtn = document.getElementById("resetBtn");
 
-viewState = 0;
+let viewState = 0;
 
-EventlISnte. click NEXT i++
-Evenliste   Fn => viewState = 0
+nextBtn.addEventListener("click", next);
+prevBtn.addEventListener("click", previous);
+resetBtn.addEventListener("click", reset);
 
-Fn 
-Bracket notation
+function next() {
+    console.log("Yup yup")
+};
+function previous() {
+    console.log("Yeah yeah")
+};
+function reset() {
+    console.log("Yip yip")
+};
 
-let stateArray = [ ]
+let stateArray = [
     State 0: {
-        image: IMG/srfnxbjdnb.png
-        header:
-        p:
-        prev:
+        image: null,
+        header: "Your thoughts are so obvious.",
+        p: "I bet I can read you mind, you simpleton.",
+        prev: 
         next: null;
         reset: 
     }
     State 3: {
-        image: IMG/srfnxbjdnb.png
+        image: IMG / srfnxbjdnb.png
         header:
         p:
         prev:
@@ -33,7 +38,7 @@ let stateArray = [ ]
         reset: 
     }
     State 4: {
-        image: IMG/srfnxbjdnb.png
+        image: IMG / srfnxbjdnb.png
         header:
         p:
         prev:
@@ -41,15 +46,15 @@ let stateArray = [ ]
         reset: 
     }
     State 5: {
-        image: IMG/srfnxbjdnb.png
+        image: IMG / srfnxbjdnb.png
         header:
         p:
         prev:
-        next: null;
+        next: null,
         reset: 
     }
     State 6: {
-        image: IMG/srfnxbjdnb.png
+        image: IMG / srfnxbjdnb.png
         header:
         p:
         prev:
@@ -57,14 +62,14 @@ let stateArray = [ ]
         reset: 
     }
     State 7: {
-        image: IMG/srfnxbjdnb.png
+        image: IMG / srfnxbjdnb.png
         header:
         p:
         prev:
         next: null;
         reset: 
     }
-
+];
 let myArray = [
   {id: 0, name: "Jhon"},
   {id: 1, name: "Sara"},
