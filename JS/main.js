@@ -9,90 +9,62 @@ let resetBtn = document.getElementById("resetBtn");
 let i = 0;
 console.log(2);
 
-let stateArray = [];
-let viewState = stateArray[0];
-console.log(4);
-
-nextBtn.addEventListener("click", next);
-prevBtn.addEventListener("click", previous);
-resetBtn.addEventListener("click", reset);
-console.log(3);
-
-function next() {
-    i++;
-    viewState = stateArray[i];
-    console.log("view state incremented once")
-};
-console.log(5);
-
-function previous() {
-    i--;
-    viewState = stateArray[i];
-    console.log("view state decremented once")
-};
-console.log(6);
-function reset() {
-    viewState = stateArray[0];
-    console.log("set to first page")
-};
-console.log(7);
-
-stateArray = [
+let stateArray = [
     {   state: 0,  
         image: null,
         header: "Your thoughts are so obvious.",
         p: "I bet I can read you mind, you simpleton.",
         prev: null,
-        next: next(),
-        reset: reset(),
+        next: null,
+        reset: "go",
     },
-     {  state: 1,  
+    {  state: 1,  
         image: null,
         header: "I know it's hard for you, but think.",
         p: "Think of a whole number between 1-100.",
         prev: null,
-        next: next(),
-        reset: reset(),
+        next: "next",
+        reset: "symbol",
     },
     {   state: 2,  
         image: null,
         header: "Knowing you, you'll need a calculator for this.",
         p: "Double the number you chose.",
         prev: null,
-        next: next(),
-        reset: reset(),
+        next: "next",
+        reset: "symbol",
     },
     {   state: 3,  
         image: null,
         header: "This next part should be easy. Then again... it's you...",
         p: "Add 'insert random EVEN number' to your number.",
         prev: null,
-        next: next(),
-        reset: reset(),
+        next: "next",
+        reset: "symbol",
     },
     {   state: 4,  
         image: null,
         header: "Try not to use your fingers and toes...",
         p: "Divide your number by 2.",
         prev: null,
-        next: next(),
-        reset: reset(),
+        next: "next",
+        reset: "symbol",
     },
     {   state: 5,  
         image: null,
         header: "Make sure you know how to subtract. Geesh...",
         p: "Subtract your original number from you new number.",
         prev: null,
-        next: next(),
-        reset: reset(),
+        next: "next",
+        reset: "symbol",
     },
     {   state: 6,  
         image: null,
         header: "Here comes the icing on the cake...",
         p: "Now add 'random number here'.",
         prev: null,
-        next: next(),
-        reset: reset(),
+        next: "next",
+        reset: "symbol",
     },
     {   state: 7,  
         image: null,
@@ -100,9 +72,47 @@ stateArray = [
         p: "Is this your number? 'display answer' ",
         prev: null,
         next: null,
-        reset: reset(),
+        reset: "symbol",
     }
 ];
-console.log(8);
+console.log("We made it through the array thingy!!")
+function updateView() {
+    header.textContent = stateArray[i].header;
+    nextBtn.textContent = stateArray[i].next;
+    prevBtn.textContent = stateArray[i].prev;
+    paragraph.textContent = stateArray[i].p;
+    resetBtn.textContent = stateArray[i].reset;
+    
+    nextBtn.addEventListener("click", stateArray[i].next);
+    prevBtn.addEventListener("click", stateArray[i].prev);
+    resetBtn.addEventListener("click", stateArray[i].reset);
+}
+console.log("Function looks good!");
+updateView();
+console.log("Updated!");
 
+
+function next() {
+    i++;
+    // stateArray[i];
+    console.log("view state incremented once")
+};
+console.log(5);
+
+function previous() {
+    i--;
+    // stateArray[i];
+    console.log("view state decremented once")
+};
+console.log(6);
+function reset() {
+    i = 0;
+    // stateArray[i];
+    console.log("set to first page")
+};
+console.log(7);
+
+nextBtn.addEventListener("click", stateArray[i].next);
+prevBtn.addEventListener("click", stateArray[i].prev);
+resetBtn.addEventListener("click", stateArray[i].reset);
 //I feel like somehow I can use the spread operator to update the object values. 
