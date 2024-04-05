@@ -1,13 +1,12 @@
 let header = document.querySelector("h5");
-console.log(1)
 let nextBtn = document.getElementById("nextBtn");
 let paragraph = document.querySelector("p");
 let resetBtn = document.getElementById("resetBtn");
 let icon = '<i class="fa-solid fa-rotate-left"></i>';
-let i = 0;
-console.log(2);
 
-let stateArray = [
+let i = 0;                          //iterator that helps keeps state
+
+let stateArray = [                  //this is an array filled with objects      
   {
     state: 0,
     image: null,
@@ -21,7 +20,7 @@ let stateArray = [
     header: "Pick a number from 01-99",
     p: "when you have your number click next",
     next: "NEXT",
-    reset: resetBtn.style.display,
+    reset: null,
   },
   {
     state: 2,
@@ -54,49 +53,45 @@ let stateArray = [
     next: "",
   },
 ];
-console.log("We made it through the array thingy!!")
 
-function updateView() {
+function updateView() {             //function that updates each element with object values
     header.textContent = stateArray[i].header;
     nextBtn.textContent = stateArray[i].next;
     paragraph.textContent = stateArray[i].p;
     resetBtn.textContent = stateArray[i].reset;
-    console.log("The state array stuff looks good")
-    nextBtn.addEventListener("click", /*stateArray[i].*/next);
-    console.log("The next button stuff looks good");
-    console.log("The previous button stuff looks good");
-    resetBtn.addEventListener("click", /*stateArray[i].*/reset);
-    console.log("The reset button stuff looks good");
+    
+    nextBtn.addEventListener("click", next);
+    resetBtn.addEventListener("click", reset);
+    divisibleByNine();
 }
-console.log("Function looks good!");
-updateView();
-console.log("Updated!");
 
+updateView();
 
 function next() {
     i++;
     updateView(i);
-    console.log("view state incremented once")
 };
-console.log(5);
-
-function previous() {
-    i--;
-    updateView(i);
-    console.log("view state decremented once")
-};
-console.log(6);
 
 function reset() {
     i = 0;
     updateView(i);
-    console.log("set to first page")
 };
-console.log(7);
 
 nextBtn.addEventListener("click", next);
-console.log("The ext button stuff looks good");
-console.log("The previous button stuff looks good");
 resetBtn.addEventListener("click", reset);
-console.log("The reset button stuff looks good");
  
+function divisibleByNine() {
+let symbolArray = ["!", "@", "#", "$", "%", "^", "=", "*", "(", ")", "+", "-"];
+let symbolList = document.getElementById("symbolUl");
+  for (let i = 0; i < 100; i++) {
+    let newLi = document.createElement("li");
+    if (i % 9 == 0) {
+      symbolList.textContent = `${i} : &`;
+    } else {
+      let randomSymbol = [Math.floor(Math.random() * symbolArray.length)]
+      symbolList.textContent = `${i} : ${}`;
+      newLi.textContent = symbolSign;
+    }
+    symbolList.appendChild(newLi);
+  }
+}

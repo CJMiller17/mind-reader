@@ -1,11 +1,7 @@
-/* html {
-    height: 100vh;
-} */
 body {
     margin: 0;
 }
 main {
-    height: 100%;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ; 
     color: #707070;
     overflow: hidden;
@@ -14,7 +10,7 @@ main {
 }
 h5 {
     margin-top: 2.2rem;
-    margin-bottom: 2.2rem;
+    margin-bottom: 3rem;
     margin-left: 1rem;
     margin-right: 1rem;
     text-align: center;
@@ -25,10 +21,9 @@ h5 {
 .section1 {
     width: 80vw;
     margin: 1rem;
-    margin-bottom: 5rem;
 }
 .section2 {
-    margin-top: 27vh;
+    margin-top: 1rem;
 }
 #nextBtn {
     color: white;
@@ -53,8 +48,7 @@ p {
 
 }
 #resetBtn {
-    margin-left: 23rem;
-    margin-top: 8rem;
+    margin-left: 15rem;
     height: 5.5rem;
     width: 5.5rem;
     border-radius: 50%;
@@ -64,6 +58,9 @@ p {
     color: #8BD8E2;
     border-width: .1rem;
     border-color: #707070;
+}
+ul {
+   list-style-type: none; 
 }
 /* Button Color: #8BD8E2 */
 /* text color: #707070 */
