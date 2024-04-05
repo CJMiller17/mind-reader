@@ -64,3 +64,7 @@ ul {
 }
 /* Button Color: #8BD8E2 */
 /* text color: #707070 */
+
+.d-none {
+    display: none;
+}

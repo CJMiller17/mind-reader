@@ -2,7 +2,11 @@ let header = document.querySelector("h5");
 let nextBtn = document.getElementById("nextBtn");
 let paragraph = document.querySelector("p");
 let resetBtn = document.getElementById("resetBtn");
+let symbolList = document.getElementById("symbolUl");
 let icon = '<i class="fa-solid fa-rotate-left"></i>';
+
+let symbolArray = ["!", "@", "#", "$", "%", "^", "=", "*", "(", ")", "+", "-"];
+let specialIcon = randomIcon();
 
 let i = 0;                          //iterator that helps keeps state
 
@@ -41,14 +45,14 @@ let stateArray = [                  //this is an array filled with objects
   {
     state: 4,
     image: null,
-    header: "0 - & 1- @ 2 - $ 3 - B ...",
+    header: "",
     p: "Find your new number. Note the symbol beside the number",
     next: "REVEAL",
   },
   {
     state: 5,
     image: null,
-    header: "&",
+    header: specialIcon,
     p: "Your symbol is: &",
     next: "",
   },
@@ -61,8 +65,13 @@ function updateView() {             //function that updates each element with ob
     resetBtn.textContent = stateArray[i].reset;
     
     nextBtn.addEventListener("click", next);
-    resetBtn.addEventListener("click", reset);
-    divisibleByNine();
+  resetBtn.addEventListener("click", reset);
+  // header.innerHTML = (i === 4 ? symbolList : header.innerHTML);
+  if (i === 4) {
+    symbolList.classList.remove("d-none");
+  } else {
+    symbolList.classList.add("d-none");
+  }
 }
 
 updateView();
@@ -79,19 +88,23 @@ function reset() {
 
 nextBtn.addEventListener("click", next);
 resetBtn.addEventListener("click", reset);
- 
+
+
 function divisibleByNine() {
-let symbolArray = ["!", "@", "#", "$", "%", "^", "=", "*", "(", ")", "+", "-"];
-let symbolList = document.getElementById("symbolUl");
+  
   for (let i = 0; i < 100; i++) {
     let newLi = document.createElement("li");
     if (i % 9 == 0) {
-      symbolList.textContent = `${i} : &`;
+      newLi.textContent = `${i} : ${specialIcon}`;
     } else {
-      let randomSymbol = [Math.floor(Math.random() * symbolArray.length)]
-      symbolList.textContent = `${i} : ${}`;
-      newLi.textContent = symbolSign;
+      let randomSymbol = randomIcon();
+      newLi.textContent = `${i} : ${randomSymbol}`;
+      // newLi.textContent = symbolSign;
     }
     symbolList.appendChild(newLi);
   }
 }
+function randomIcon() {
+  return symbolArray[Math.floor(Math.random() * symbolArray.length)];
+}  
+divisibleByNine();
