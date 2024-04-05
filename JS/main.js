@@ -53,7 +53,7 @@ let stateArray = [                  //this is an array filled with objects
     state: 5,
     image: null,
     header: specialIcon,
-    p: "Your symbol is: &",
+    p: "Your symbol is:",
     next: "",
   },
 ];
