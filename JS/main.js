@@ -3,53 +3,56 @@ console.log(1)
 let nextBtn = document.getElementById("nextBtn");
 let paragraph = document.querySelector("p");
 let resetBtn = document.getElementById("resetBtn");
-
+let icon = '<i class="fa-solid fa-rotate-left"></i>';
 let i = 0;
 console.log(2);
 
 let stateArray = [
-    {   state: 0,  
-        image: null,
-        header: "I can read your mind",
-        p: "",
-        next: "",
-        reset: "GO",
-    },
-    {  state: 1,  
-        image: null,
-        header: "Pick a number from 01-99",
-        p: "when you have your number click next",
-        next: "next",
-        reset: resetBtn.style.display,
-    },
-    {   state: 2,  
-        image: null,
-        header: "Add both digits together to get a new number",
-        p: "Ex: 14 is 1 + 4 = 5 click next to proceed",
-        next: "next",
-        reset: "",
-    },
-    {   state: 3,  
-        image: null,
-        header: "Subtract your new number from the original number",
-        p: "Ex: 14 - 5 = 9",
-        next: "next",
-        reset: "",
-    },
-    {   state: 4,  
-        image: null,
-        header: "Series of symbols ... ",
-        p: "Find your new number. Note the symbol beside the number",
-        next: "reveal",
-        reset: "symbol",
-    },
-    {   state: 5,  
-        image: null,
-        header: "Symbol",
-        p: "Your symbol is &",
-        next: "",
-        reset: "symbol",
-    },
+  {
+    state: 0,
+    image: null,
+    header: "I can read your mind",
+    p: "",
+    next: "NEXT",
+  },
+  {
+    state: 1,
+    image: null,
+    header: "Pick a number from 01-99",
+    p: "when you have your number click next",
+    next: "NEXT",
+    reset: resetBtn.style.display,
+  },
+  {
+    state: 2,
+    image: null,
+    header: "Add both digits together to get a new number",
+    p: "Ex: 14 is 1 + 4 = 5 click next to proceed",
+    next: "NEXT",
+    reset: "",
+  },
+  {
+    state: 3,
+    image: null,
+    header: "Subtract your new number from the original number",
+    p: "Ex: 14 - 5 = 9",
+    next: "NEXT",
+
+  },
+  {
+    state: 4,
+    image: null,
+    header: "0 - & 1- @ 2 - $ 3 - B ...",
+    p: "Find your new number. Note the symbol beside the number",
+    next: "REVEAL",
+  },
+  {
+    state: 5,
+    image: null,
+    header: "&",
+    p: "Your symbol is: &",
+    next: "",
+  },
 ];
 console.log("We made it through the array thingy!!")
 
